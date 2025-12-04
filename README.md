@@ -104,13 +104,7 @@ FlexReportsBackup_2025_12_04_10_30_45.zip
 
 ### Report JSON Contents
 
-Each JSON file contains complete report details:
-- Report metadata (name, creator, last updated)
-- SQL statement
-- Dataset information
-- Data granularity settings
-- Time range configuration
-- Tag backlinking settings
+Each JSON file contains complete JSON and SQL blob that can be used to restore a FlexReport.  Copy/paste the blob in to the FlexReports editor.
 
 ## Exit Codes
 
@@ -127,32 +121,6 @@ else
     echo "Backup failed"
 fi
 ```
-
-## Troubleshooting
-
-### Authentication Failed
-
-**Problem:** `Authentication request failed: 401 Unauthorized`
-
-**Solution:** Verify your API key is valid and has not expired.
-
-### Network Timeout
-
-**Problem:** `Failed to fetch datasets: Timeout`
-
-**Solution:** Check your network connection. The script uses 30-second timeouts for metadata and 60-second timeouts for downloads.
-
-### No Reports Found
-
-**Problem:** `No FlexReports found to backup`
-
-**Solution:** This is normal if your CloudHealth account has no saved FlexReports. Verify you're using the correct API key for the intended account.
-
-### File Permission Errors
-
-**Problem:** `Failed to write file for FlexReport`
-
-**Solution:** Ensure you have write permissions in the current directory.
 
 ## Automation
 
@@ -185,6 +153,3 @@ ls -t FlexReportsBackup_*.zip | tail -n +8 | xargs -r rm
 - The zip archive uses compression to minimize file size
 - All HTTP requests include timeouts to prevent hanging
 
-## Support
-
-For issues or questions, contact your CloudHealth administrator.

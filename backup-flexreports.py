@@ -1,6 +1,8 @@
 """
 CloudHealth FlexReports Backup Script
 
+Author: Dean Tabor - CloudHealth Professional Services (dean.tabor@arrow.com)
+
 This script authenticates to the CloudHealth API, retrieves all FlexReports across
 all available datasets, downloads each report as JSON, and packages them into a
 timestamped zip file for backup purposes.
